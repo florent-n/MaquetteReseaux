@@ -1,0 +1,199 @@
+
+!
+! Last configuration change at 11:38:27 CET Tue Apr 28 2020
+!
+version 15.2
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+service compress-config
+!
+hostname IXP_R0
+!
+boot-start-marker
+boot-end-marker
+!
+!
+!
+no aaa new-model
+clock timezone CET 1 0
+!
+!
+!
+!
+!
+!
+!
+!
+no ip domain-lookup
+ip cef
+ipv6 unicast-routing
+ipv6 cef
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+!
+interface Ethernet0/1
+!
+interface Ethernet0/2
+!
+interface Ethernet0/3
+!
+interface Ethernet1/0
+!
+interface Ethernet1/1
+!
+interface Ethernet1/2
+!
+interface Ethernet1/3
+!
+interface Ethernet2/0
+!
+interface Ethernet2/1
+!
+interface Ethernet2/2
+!
+interface Ethernet2/3
+!
+interface Ethernet3/0
+!
+interface Ethernet3/1
+!
+interface Ethernet3/2
+!
+interface Ethernet3/3
+!
+interface Ethernet4/0
+!
+interface Ethernet4/1
+!
+interface Ethernet4/2
+!
+interface Ethernet4/3
+!
+interface Vlan1
+ ip address 192.0.2.254 255.255.255.0
+ ipv6 address 2001:7F8:54::FFFF/64
+!
+router bgp 51706
+ bgp log-neighbor-changes
+ network 192.0.0.0 mask 255.255.252.0
+ neighbor 192.0.2.1 remote-as 1
+ neighbor 192.0.2.1 next-hop-self
+ neighbor 192.0.2.2 remote-as 1
+ neighbor 192.0.2.2 next-hop-self
+ neighbor 192.0.2.3 remote-as 2
+ neighbor 192.0.2.3 next-hop-self
+ neighbor 192.0.2.4 remote-as 2
+ neighbor 192.0.2.4 next-hop-self
+ neighbor 192.0.2.5 remote-as 3
+ neighbor 192.0.2.5 next-hop-self
+ neighbor 192.0.2.6 remote-as 3
+ neighbor 192.0.2.6 next-hop-self
+ neighbor 192.0.2.7 remote-as 4
+ neighbor 192.0.2.7 next-hop-self
+ neighbor 192.0.2.8 remote-as 4
+ neighbor 192.0.2.8 next-hop-self
+ neighbor 192.0.2.9 remote-as 5
+ neighbor 192.0.2.9 next-hop-self
+ neighbor 192.0.2.10 remote-as 5
+ neighbor 192.0.2.10 next-hop-self
+ neighbor 192.0.2.11 remote-as 6
+ neighbor 192.0.2.11 next-hop-self
+ neighbor 192.0.2.12 remote-as 6
+ neighbor 192.0.2.12 next-hop-self
+ neighbor 192.0.2.13 remote-as 7
+ neighbor 192.0.2.13 next-hop-self
+ neighbor 192.0.2.14 remote-as 7
+ neighbor 192.0.2.14 next-hop-self
+ neighbor 192.0.2.15 remote-as 8
+ neighbor 192.0.2.15 next-hop-self
+ neighbor 192.0.2.16 remote-as 8
+ neighbor 192.0.2.16 next-hop-self
+ neighbor 192.0.2.17 remote-as 9
+ neighbor 192.0.2.17 next-hop-self
+ neighbor 192.0.2.18 remote-as 9
+ neighbor 192.0.2.18 next-hop-self
+ neighbor 192.0.2.19 remote-as 10
+ neighbor 192.0.2.19 next-hop-self
+ neighbor 192.0.2.20 remote-as 10
+ neighbor 192.0.2.20 next-hop-self
+ neighbor 192.0.2.21 remote-as 11
+ neighbor 192.0.2.21 next-hop-self
+ neighbor 192.0.2.22 remote-as 11
+ neighbor 192.0.2.22 next-hop-self
+ neighbor 192.0.2.23 remote-as 12
+ neighbor 192.0.2.23 next-hop-self
+ neighbor 192.0.2.24 remote-as 12
+ neighbor 192.0.2.24 next-hop-self
+ neighbor 192.0.2.25 remote-as 13
+ neighbor 192.0.2.25 next-hop-self
+ neighbor 192.0.2.26 remote-as 13
+ neighbor 192.0.2.26 next-hop-self
+ neighbor 192.0.2.27 remote-as 14
+ neighbor 192.0.2.27 next-hop-self
+ neighbor 192.0.2.28 remote-as 14
+ neighbor 192.0.2.28 next-hop-self
+ neighbor 192.0.2.29 remote-as 15
+ neighbor 192.0.2.29 next-hop-self
+ neighbor 192.0.2.30 remote-as 15
+ neighbor 192.0.2.30 next-hop-self
+ neighbor 192.0.2.31 remote-as 16
+ neighbor 192.0.2.31 next-hop-self
+ neighbor 192.0.2.32 remote-as 16
+ neighbor 192.0.2.32 next-hop-self
+ neighbor 192.0.2.33 remote-as 17
+ neighbor 192.0.2.33 next-hop-self
+ neighbor 192.0.2.34 remote-as 17
+ neighbor 192.0.2.34 next-hop-self
+ neighbor 192.0.2.35 remote-as 18
+ neighbor 192.0.2.35 next-hop-self
+ neighbor 192.0.2.36 remote-as 18
+ neighbor 192.0.2.36 next-hop-self
+ neighbor 192.0.2.37 remote-as 19
+ neighbor 192.0.2.37 next-hop-self
+ neighbor 192.0.2.38 remote-as 19
+ neighbor 192.0.2.38 next-hop-self
+!
+ip forward-protocol nd
+!
+no ip http server
+no ip http secure-server
+!
+ip route 192.0.0.0 255.255.252.0 Null0
+!
+!
+!
+!
+!
+control-plane
+!
+!
+line con 0
+ exec-timeout 60 0
+ logging synchronous
+ length 0
+line aux 0
+line vty 0 4
+!
+!
+end

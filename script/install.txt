@@ -1,0 +1,18 @@
+Sur ubuntu 18.04 LTS
+support iou :
+apt-get install lib32z1
+apt-get install libssl1.0.0:i386
+sudo ln -s /usr/lib/i386-linux-gnu/libcrypto.so.1.0.0 /usr/lib/libcrypto.so.4
+
+Sur ubuntu 20.04
+Create file /etc/apt/sources.list.d/libssl.list with the following line 
+deb http://security.debian.org/debian-security jessie/updates main
+
+sudo apt-get update
+The key is not known so to add these keys
+
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 9D6D8F6BC857C906
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AA8E81B4331F7F50
+
+sudo apt-get install libssl1.0.0:i386
+sudo ln -s /usr/lib/i386-linux-gnu/libcrypto.so.1.0.0 /usr/lib/libcrypto.so.4
